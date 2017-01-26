@@ -74,7 +74,9 @@ function imprimir($conteudo) {
 			$link = "?url=$link";
 		} else {
 			$img  = identificarImgExtensao($value);
-			$link = $GLOBALS['dir'] == "./"?$value:$GLOBALS['dir']."/".$value;
+			//$link = $GLOBALS['dir'] == "./"?$value:$GLOBALS['dir']."/".$value;
+			$link = ($value == "index.php" or $value == "index.html")?$GLOBALS['dir']."/":
+			$link = ($GLOBALS['dir'] == "./")?$value:$GLOBALS['dir']."/".$value;
 		}
 		$value = ucfirst($value);
 
